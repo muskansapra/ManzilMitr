@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <script src="https://kit.fontawesome.com/b04da06128.js" crossorigin="anonymous"></script>
     <style>
+    
         * {
   margin: 0;
   padding: 0;
@@ -34,7 +36,104 @@ header {
   align-items: center;
   padding: 1rem 2rem;
 }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 
+.nav-links a,
+.dropbtn {
+  color: #003E47;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.nav-links > li {
+  position: relative;
+}
+
+/* Hide toggle checkboxes */
+.dropdown input,
+#menu-toggle,.menu-icon {
+  display: none;
+}
+
+/* Dropdown base */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #ffffff;
+  min-width: 160px;
+  left: 0;
+  top: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.dropdown-content a {
+  padding: 10px;
+  white-space: nowrap;
+}
+
+/* -------- Desktop Hover Behavior -------- */
+@media (min-width: 768px) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Hide mobile click labels */
+  .dropdown input,
+  .dropbtn {
+    cursor: default;
+  }
+}
+
+/* -------- Mobile Click Behavior -------- */
+@media (max-width: 767px) {
+
+  .menu-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    color: #003E47;
+  }
+
+  .nav-links {
+    position: absolute;
+    align-items:center;
+    flex-direction: column;
+    width: 50%;
+    right: 0;
+    top: 100px;
+    background: #ffffff;
+    display: none;
+    padding-bottom: 10px;
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  /* Dropdowns open via checkbox click */
+  .dropdown input:checked + .dropbtn + .dropdown-content {
+    display: block;
+    position: static; /* So it expands inside menu */
+    background: #222;
+  }
+
+  /* Show dropdown toggle text as clickable */
+  .dropbtn {
+    cursor: pointer;
+  }
+}
+
+
+/*
 nav {
   display: flex;
   align-items: center;
@@ -53,13 +152,38 @@ nav {
   text-decoration: underline;
 }
 
+.nav-links > li {
+  position: relative;
+}
+  
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #444;
+  min-width: 160px;
+  left: 0;
+  top: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.dropdown-content a {
+  padding: 10px;
+  white-space: nowrap;
+}
+
 .menu-toggle {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-/* Responsive: hide links and show menu icon on small screens */
+
+
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -79,6 +203,7 @@ nav {
     margin: 0.5rem 0;
   }
 }
+*/
 
     </style>
 
@@ -89,6 +214,112 @@ nav {
 
     </script>
 
+    <!--
+    <style>
+      /* Base nav */
+.navbar {
+  background: white;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a,
+.dropbtn {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.nav-links > li {
+  position: relative;
+}
+
+/* Hide toggle checkboxes */
+.dropdown input,
+#menu-toggle {
+  display: none;
+}
+
+/* Dropdown base */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #444;
+  min-width: 160px;
+  left: 0;
+  top: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.dropdown-content a {
+  padding: 10px;
+  white-space: nowrap;
+}
+
+/* -------- Desktop Hover Behavior -------- */
+@media (min-width: 768px) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Hide mobile click labels */
+  .dropdown input,
+  .dropbtn {
+    cursor: default;
+  }
+}
+
+/* -------- Mobile Click Behavior -------- */
+@media (max-width: 767px) {
+
+  .menu-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .nav-links {
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    background: #333;
+    display: none;
+    padding-bottom: 10px;
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  /* Dropdowns open via checkbox click */
+  .dropdown input:checked + .dropbtn + .dropdown-content {
+    display: block;
+    position: static; /* So it expands inside menu */
+    background: #222;
+  }
+
+  /* Show dropdown toggle text as clickable */
+  .dropbtn {
+    cursor: pointer;
+  }
+}
+
+    </style>
+    -->
 </head>
 <body>
     <div class="bar">
@@ -96,20 +327,126 @@ nav {
             
             <i class="fas fa-phone"></i> <span class="icon-text">+91 98107 52174</span>
         </div>
+        
         <header>
         <a href="doc.html"><img src="logo-min.png" width="auto" height="45px"></a>
         
+    <nav class="navbar">
+
     
-   <nav>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">☰</label>
+
+    <ul class="nav-links">
+
+     
+      <li class="dropdown">
+        <input type="checkbox" id="drop-1">
+        <label for="drop-1" class="dropbtn">Weekend Getaways</label>
+
+        <ul class="dropdown-content">
+          <li><a href="#">Manali Sissu Kasol</a></li>
+          <li><a href="#">Jibhi Tirthan</a></li>
+          <li><a href="#">Kasol Kheerganga</a></li>
+          <li><a href="#">Mcleodganj Triund</a></li>
+          <li><a href="#">Mcleodganj Bir Billing</a></li>
+          <li><a href="#">Chopta Tungnath</a></li>
+          <li><a href="#">Chakrata</a></li>
+          <li><a href="#">Kanatal</a></li>
+        </ul>
+      </li>
+   
+      
+      <li class="dropdown">
+        <input type="checkbox" id="drop-1">
+        <label for="drop-1" class="dropbtn">Backpacking Tours</label>
+
+        <ul class="dropdown-content">
+          <li><a href="#">Spiti Valley</a></li>
+          <li><a href="#">Leh Ladakh</a></li>
+        </ul>
+      </li>
+   
+      <li class="dropdown">
+        <input type="checkbox" id="drop-2">
+        <label for="drop-2" class="dropbtn">Spiritual Tours</label>
+
+        <ul class="dropdown-content">
+          <li><a href="#">Chopta Tungnath</a></li>
+          <li><a href="#">Kedarnath</a></li>
+          <li><a href="#">Badrinath</a></li>
+        </ul>
+      </li>
+      <li><a href="About Us.html">About Us</a></li>
+      <li><a href="Contact Us.html">Contact Us</a></li>
+
+    </ul>
+  </nav>
+   
+   <!--    <nav>
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <div class="nav-links">
-    <a href="#">Weekend Getaways</a>
-    <a href="#">Backpacking Trips</a>
-    <a href="#">Spiritual Tours</a>
-    <a href="#">About Us</a>
-    <a href="#">Contact Us</a>
-  </div>
+  <ul class="nav-links">
+    <li class="dropdown">Weekend Getaways
+      <ul class="dropdown-content">
+         <li><a href="#">Manali Sissu Kasol</a></li>
+         <li><a href="#">Mcleodganj Triund</a></li>
+         <li><a href="#">Jibhi Tirthan</a></li>
+      </ul>
+      <li>
+    <li>Backpacking Trips<li>
+    <li>Spiritual Tours<li>
+    <li>About Us</li>
+    <li>Contact Us</li>
+  </ul>
 </nav>
+--> 
   </header>
+
+
+
+<!--
+  <header>
+  <nav class="navbar">
+
+    < Mobile menu button >
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">☰</label>
+
+    <ul class="nav-links">
+
+      <li><a href="#">Home</a></li>
+
+      < Dropdown 1 >
+      <li class="dropdown">
+        <input type="checkbox" id="drop-1">
+        <label for="drop-1" class="dropbtn">Services ▾</label>
+
+        <ul class="dropdown-content">
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Development</a></li>
+          <li><a href="#">SEO</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">About</a></li>
+
+      < Dropdown 2 >
+      <li class="dropdown">
+        <input type="checkbox" id="drop-2">
+        <label for="drop-2" class="dropbtn">Products ▾</label>
+
+        <ul class="dropdown-content">
+          <li><a href="#">Product A</a></li>
+          <li><a href="#">Product B</a></li>
+          <li><a href="#">Product C</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Contact</a></li>
+
+    </ul>
+  </nav>
+</header>
+-->
 </body>
 </html>
